@@ -45,7 +45,12 @@ namespace Vst2
 // paths or use the "VST (Legacy) SDK Folder" field in the Projucer. The VST2
 // SDK can be obtained from the vstsdk3610_11_06_2018_build_37 (or older) VST3
 // SDK or JUCE version 5.3.2.
-#include "../../juce_audio_processors/format_types/juce_VSTInterface.h"
+#if JUCE_CUSTOM_VST2_SDK
+ #include "pluginterfaces/vst2.x/aeffect.h"
+ #include "pluginterfaces/vst2.x/aeffectx.h"
+#else
+ #include "../../juce_audio_processors/format_types/juce_VSTInterface.h"
+#endif
 }
 
 #include "juce_VSTCommon.h"

@@ -93,6 +93,14 @@
  #define JUCE_PLUGINHOST_LADSPA 0
 #endif
 
+/** Config: JUCE_CUSTOM_VST2_SDK
+    If enabled, the embedded VST2 Header in JUCE will not be used in the project and instead you should
+    add the path to your legacy VST SDK to the project's header search paths or set it as a global path.
+*/
+#ifndef JUCE_CUSTOM_VST2_SDK
+ #define JUCE_CUSTOM_VST2_SDK 0
+#endif
+
 /** Config: JUCE_CUSTOM_VST3_SDK
     If enabled, the embedded VST3 SDK in JUCE will not be added to the project and instead you should
     add the path to your custom VST3 SDK to the project's header search paths. Most users shouldn't

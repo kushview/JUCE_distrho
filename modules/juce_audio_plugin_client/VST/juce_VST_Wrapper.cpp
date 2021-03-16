@@ -78,7 +78,12 @@ JUCE_BEGIN_IGNORE_WARNINGS_MSVC (4458)
 
 namespace Vst2
 {
-#include "../../juce_audio_processors/format_types/juce_VSTInterface.h"
+#if JUCE_CUSTOM_VST2_SDK
+ #include "pluginterfaces/vst2.x/aeffect.h"
+ #include "pluginterfaces/vst2.x/aeffectx.h"
+#else
+ #include "../../juce_audio_processors/format_types/juce_VSTInterface.h"
+#endif
 }
 
 JUCE_END_IGNORE_WARNINGS_MSVC
